@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업자 정보</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/moment/moment-with-locales.min.js"></script>
+    <script src="/lib/rangepicker/daterangepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function(){
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#"><h5>홈</h5></a></li>
+                            <li class="item"><a href="#"><h5>사업자</h5></a></li>
+                            <li class="item"><a href="#"><h5>정보</h5></a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">사업자 정보</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <div class="content-box">
+                            <div class="top">
+                                <ul class="tab-box">
+                                    <li class="item click"><a href="#"><h5>정보</h5></a></li>
+                                    <li class="item"><a href="#"><h5>거래 한도 관리</h5></a></li>
+                                    <li class="item"><a href="#"><h5>인지세 정보 관리</h5></a></li>
+                                </ul>
+                            </div>
+                            <div class="middle full">
+                                <ul class="grid-box w406">
+                                    <li class="item">
+                                        <div class="content-box txtc">
+                                            <div class="middle">
+                                                <ul class="line-box business-info">
+                                                    <li class="item">
+                                                        <h3 class="mb-20">CJ 올리브네트웍스</h3>
+                                                        <ul class="flex j-center gap-8">
+                                                            <li>
+                                                                <div class="img-upload img-box">
+                                                                    <label class="img_drag" for="img_input" id="img_drag">
+                                                                        <div class="inner">
+                                                                            <img src="/images/cj.svg" alt="">
+                                                                        </div>
+                                                                    </label>
+                                                                    <input accept="image/*" class="img_input" hidden="true"
+                                                                        id="img_input" multiple="true" required="true"
+                                                                        type="file">
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img-upload sm img-box">
+                                                                    <label class="img_drag" for="img_input" id="img_drag">
+                                                                        <div class="inner">
+                                                                            <img src="/images/stamp.svg" alt="">
+                                                                        </div>
+                                                                    </label>
+                                                                    <input accept="image/*" class="img_input" hidden="true"
+                                                                        id="img_input" multiple="true" required="true"
+                                                                        type="file">
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="item">
+                                                        <ul class="flex j-around">
+                                                            <li>
+                                                                <h5 class="title mb-10">브랜드</h5>
+                                                                <h4>37</h4>
+                                                            </li>
+                                                            <li>
+                                                                <h5 class="title mb-10">채널</h5>
+                                                                <h4>2749</h4>
+                                                            </li>
+                                                            <li>
+                                                                <h5 class="title mb-10">인지세</h5>
+                                                                <h4>적용 중</h4>
+                                                            </li>
+                                                            <li>
+                                                                <h5 class="title mb-10">한도</h5>
+                                                                <h4>없음</h4>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="item flex j-center">
+                                                        <button class="btn-blue ml-0">세일즈 정보 동기화</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content-box mt-20">
+                                            <div class="top">
+                                                <h4>등록/수정 정보</h4>
+                                            </div>
+                                            <div class="middle">
+                                                <ul>
+                                                    <li class="register-box mb-15">
+                                                        <h5 class="title">사업자 사용 여부</h5>
+                                                        <div class="switch-box">
+                                                            <input type="checkbox" id="switch" checked autocomplete="off">
+                                                            <label for="switch" class="switch">
+                                                                <span class="onf-btn"></span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="register-box mb-15">
+                                                        <h5 class="title">등록 정보</h5>
+                                                        <div><span>2024-01-01 01:11</span><span>홍길동</span></div>
+                                                    </li>
+                                                    <li class="register-box">
+                                                        <h5 class="title">수정 정보</h5>
+                                                        <div><span>2024-01-01 01:11</span><span>홍길동</span></div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="content-box">
+                                            <div class="top">
+                                                <h4>사업자 세일즈 정보</h4>
+                                            </div>
+                                            <div class="middle">
+                                                <div class="grid-box g2">
+                                                    <div>
+                                                        <h5 class="title">사업자명</h5>
+                                                        <p class="fs-14">CJ 올리브네트웍스</p>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="title">사업자 번호</h5>
+                                                        <p class="fs-14">124139821739</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-box g2">
+                                                    <div>
+                                                        <h5 class="title">대표자명</h5>
+                                                        <p class="fs-14">홍길동</p>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="title">업태 / 업종</h5>
+                                                        <p class="fs-14">소비자업/판매업</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-box g2">
+                                                    <div>
+                                                        <h5 class="title">주소</h5>
+                                                        <p class="fs-14">부산광역시 강서구 녹산산단382로14번가길 10~29번지(송정동)</p>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="title">상세 주소</h5>
+                                                        <p class="fs-14">트윈시티 빌딩 10층</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-box g2">
+                                                    <div>
+                                                        <h5 class="title">우편번호</h5>
+                                                        <p class="fs-14">12314</p>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="title">전화번호</h5>
+                                                        <p class="fs-14">02-102-1234</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-box mt-20">
+                                            <div class="top">
+                                                <h4>사업자 관리 정보</h4>
+                                            </div>
+                                            <div class="middle">
+                                                <ul class="grid-box g2">
+                                                    <li>
+                                                        <h5 class="title">사업자 구분</h5>
+                                                        <ul class="radio-box flex">
+                                                            <li class="item">
+                                                                <input type="radio" id="radio5-1" name="radio" checked>
+                                                                <label for="radio5-1">
+                                                                    <span></span>
+                                                                    <h5>브랜드/채널</h5>
+                                                                </label>
+                                                            </li>
+                                                            <li class="item">
+                                                                <input type="radio" id="radio5-2" name="radio">
+                                                                <label for="radio5-2">
+                                                                    <span></span>
+                                                                    <h5>가맹점 사업자</h5>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <label for="user_id" class="input-box">
+                                                            <h5 class="font-gray title">대표 사업자 지정</h5>
+                                                            <input id="user_id" type="text" placeholder="" disabled>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- middle end -->
+                            <div class="bottom">
+                                <button class="btn-white">취소</button>
+                                <button class="btn-blue">정보수정</button>
+                            </div>
+                            <!-- bottom end -->
+                        </div>
+                        <!-- content-box -->
+                    </div>
+                    <!-- padding-box end -->
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+</body>
+</html>

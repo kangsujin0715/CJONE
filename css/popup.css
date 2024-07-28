@@ -1,0 +1,44 @@
+.popup {width: 100%; position: fixed; top: 0; left: 0; z-index: 100000; height: 100vh; display: none;}
+.popup.on {display: block;}
+.popup .dim {width: 100%; background: rgba(0, 0, 0, 0.6); height: 100%; display: flex; justify-content: center; align-items: center;}
+
+.popup .dim > div{max-width:1200px; max-height: calc(100vh - 140px); display: flex; flex-direction: column;}
+
+.popup .error-box {display: flex; border: 1px solid #FFCCC7; border-radius: 4px; background-color: #FFF1F0; padding: 8px 12px; margin-bottom: 20px;}
+.popup .error-box::before {content: ''; display: block; width: 16px; height: 22px; background: url(/images/icon-error.svg) center top 3px no-repeat; background-size: 16px;}
+.popup .error-box > div {padding-left: 4px;}
+.popup .error-box h5 {font-weight: 700;}
+.popup .error-box p {font-size: 12px; line-height: 20px; color: #FF4D4F; margin-top: 4px;}
+
+.popup .top {flex-shrink: 0;}
+.popup .top, .popup  .content-box:has(.tab-box) > .top{position: relative; padding:16px;}
+.popup  .content-box:has(.tab-box) > .top{border-bottom:1px solid #f0f0f0;}
+.popup .top .title {font-weight: 700;}
+.popup .top p {font-size: 14px; line-height: 22px; color: #8C8C8C;}
+.popup .top .close-btn {position: absolute; top: 20px; right: 16px; width: 16px; height: 16px; padding: 0; background: url(/images/icon-close.svg) center no-repeat; background-size: 16px;}
+
+.popup .middle{max-height:100%; overflow-y: auto;}
+.popup .middle, .popup .content-box:has(.tab-box) .middle {padding: 24px;}
+.popup .middle.p-24:has(+ .bottom) {padding-bottom: 0 !important;}
+.popup .middle .notice li {font-size: 12px; font-weight: 500; line-height: 20px; color: #8C8C8C;}
+
+.popup .input-btn-box button {/*padding: 0 10px;*/ flex-shrink: 0;}
+.popup input[type="radio"] + label {height: 40px;}
+
+.popup .middle > .font-blue {margin-bottom: 20px;}
+.popup .Application-img {display: flex; justify-content: center; gap: 16px; padding: 10px 0 28px;}
+.popup .Application-img img {width: 200px;}
+
+.content-box:has(.tab-box) > .bottom{padding:10px 16px;}
+.popup  .content-box:has(.tab-box) > .bottom{border-top:1px solid #f0f0f0;}
+
+.popup .tab-box + .tab-content{padding-top:30px;}
+/* .popup .middle table .pagination-box, .popup .middle table + .pagination-box{padding:0;} */
+
+.popup .content-box .middle:has(.full-table + .pagination-box) {
+    display: flex;
+    flex-direction: column;
+}
+.popup .content-box .middle:has(.full-table) .full-table + .pagination-box {
+    flex: 0 0 auto;
+}

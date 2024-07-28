@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/bpopup/jquery.bpopup.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/selectbox/filter-multi-select-bundle.min.js"></script>
+    <script src="/lib/moment/moment-with-locales.min.js"></script>
+    <script src="/lib/rangepicker/daterangepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <style>
+        .sample {background-color: #D9D9D9;}
+        .sample>div {width: 800px; background-color: #FFFFFF; padding: 30px; margin: 10px;}
+        .sample>div>h2,
+        .sample>div h3,
+        .btn-box {display: flex;}
+        .btn-box button {margin-right: 8px;}
+    </style>
+</head>
+
+<body class="sample">
+    <div>
+        <h2>등록 정보 Setting</h2>
+        <section>
+            <h3>등록 정보</h3>
+            <div class="register-box">
+                <h5 class="title">등록 정보</h5>
+                <div><span>2024-01-01 01:11</span><span>홍길동</span></div>
+            </div>
+            <!-- 20240612 퍼블리싱 등록정보 추가 -->
+        </section>
+    </div>
+
+
+    <div>
+        <h2>Tab Setting</h2>
+        <section>
+            <h3>tab 임시사용</h3>
+            <h3>tab 기본</h3>
+            <ul class="tab-box">
+                <li class="item click"><a href="#"><h5>정보</h5></a></li>
+                <li class="item"><a href="#"><h5>거래 한도 관리</h5></a></li>
+                <li class="item"><a href="#"><h5>인지세 정보 관리</h5></a></li>
+            </ul>
+            <!-- 20240613 아이콘 탭 링크 케이스 제거 예정 - 피그마 반영 후 해당 내용 삭제 -->
+            <!-- <h3>Tab with Icon</h3>
+            <ul class="tab-box">
+                <li class="item icon-item note click"><a href="#"><h5>정보</h5></a></li>
+                <li class="item icon-item print"><a href="#"><h5>거래 한도 관리</h5></a></li>
+                <li class="item icon-item w-note"><a href="#"><h5>인지세 정보 관리</h5></a></li>
+            </ul>
+            <h3>Icon Sample</h3>
+            <div class="tab-box">
+                <div class="icon-item note"><a href="#"></a></div>
+                <div class="icon-item print"><a href="#"></a></div>
+                <div class="icon-item w-note"><a href="#"></a></div>
+            </div> -->
+            <!-- 20240613 아이콘 탭 링크 케이스 제거 예정 - 피그마 반영 후 해당 내용 삭제 -->
+        </section>
+    </div>
+
+    <div>
+        <h2>Radio Card Setting</h2>
+        <section>
+            <h3>card 임시사용</h3>
+            <h3>card 기본</h3>
+            <ul class="card-box grid-box g3">
+                <li class="item">
+                   <input type="radio" id="card" name="card" checked>
+                   <label for="card" class="card-info">
+                        <h5>발급 채널</h5>
+                        <p>모바일 상품권이 발급되는<br>경로를 의미합니다.</p>
+                   </label>
+                </li>
+                <li class="item">
+                    <input type="radio" id="card2" name="card">
+                    <label for="card2" class="card-info">
+                         <h5>발급 채널</h5>
+                         <p>모바일 상품권이 발급되는<br>경로를 의미합니다.</p>
+                    </label>
+                </li>
+                <li class="item">
+                    <input type="radio" id="card3" name="card" disabled>
+                    <label for="card3" class="card-info">
+                         <h5>발급 채널</h5>
+                         <p>모바일 상품권이 발급되는<br>경로를 의미합니다.</p>
+                    </label>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <div>
+        <h2>Tag Setting</h2>
+        <section>
+            <h3>Tag 기본</h3>
+            <span class="tag red">실패</span>
+            <span class="tag orange">주의</span>
+            <span class="tag green">성공</span>
+            <span class="tag blue">진행중</span>
+            <span class="tag gray">준비중</span>
+        </section>
+    </div>
+
+    <div>
+        <h2>Radio Setting</h2>
+        <section>
+            <h3>radio 기본</h3>
+            <div class="radio-box mb-20">
+                <input type="radio" id="radio1">
+                <label for="radio1">
+                    <span></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+            <h3>radio 체크</h3>
+            <div class="radio-box mb-20">
+                <input type="radio" id="radio2" checked>
+                <label for="radio2">
+                    <span></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+            <h3>radio disabled 기본</h3>
+            <div class="radio-box mb-20">
+                <input type="radio" id="radio3" disabled>
+                <label for="radio3">
+                    <span></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+
+            <h3>radio 체크 disabled</h3>
+            <div class="radio-box mb-20">
+                <input type="radio" id="radio4" disabled>
+                <label for="radio4">
+                    <span class="on"></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+            <h3>radio 간격</h3>
+            <div>
+                <ul class="radio-box flex">
+                    <li class="item">
+                        <input type="radio" id="radio5-1" name="radio" checked>
+                        <label for="radio5-1">
+                            <span></span>
+                            <h5>사용 채널 정산</h5>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <input type="radio" id="radio5-2" name="radio" disabled>
+                        <label for="radio5-2">
+                            <span></span>
+                            <h5>발급 채널 정산</h5>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <input type="radio" id="radio5-3" name="radio">
+                        <label for="radio5-3">
+                            <span></span>
+                            <h5>미정산</h5>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+
+    <div>
+        <h2>Radio Square Setting</h2>
+        <section>
+            <h3>radio square button 2개</h3>
+            <ul class="radio-square-box">
+                <li class="item">
+                    <input type="radio" id="square1-1" name="square1" checked>
+                    <label for="square1-1">
+                        <h5>모두 가능</h5>
+                    </label>
+                </li>
+                <li class="item">
+                    <input type="radio" id="square1-2" name="square1">
+                    <label for="square1-2">
+                        <h5>CJ ONE</h5>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>radio square button 3개</h3>
+            <ul class="radio-square-box">
+                <li class="item">
+                    <input type="radio" id="square2-1" name="square2" checked>
+                    <label for="square2-1">
+                        <h5>모두 가능</h5>
+                    </label>
+                </li>
+                <li class="item">
+                    <input type="radio" id="square2-2" name="square2">
+                    <label for="square2-2">
+                        <h5>CJ ONE</h5>
+                    </label>
+                </li>
+                <li class="item">
+                    <input type="radio" id="square2-3" name="square2">
+                    <label for="square2-3">
+                        <h5>외부 채널</h5>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>radio square disabled</h3>
+            <ul class="radio-square-box">
+                <li class="item">
+                    <input type="radio" id="square3-1" name="square3" disabled>
+                    <label for="square3-1">
+                        <h5>외부 채널</h5>
+                    </label>
+                </li>
+                <li class="item">
+                    <input type="radio" id="square3-2" name="square3">
+                    <label for="square3-2">
+                        <h5>외부 채널</h5>
+                    </label>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+
+    <div>
+        <h2>Checkbox Setting</h2>
+        <section>
+            <h3>checkbox 기본</h3>
+            <div class="checkbox-box mb-20">
+                <input type="checkbox" id="check1">
+                <label for="check1">
+                    <span></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+            <h3>checkbox 체크</h3>
+            <div class="checkbox-box mb-20">
+                <input type="checkbox" id="check2" checked>
+                <label for="check2">
+                    <span></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+            <h3>checkbox disabled 기본</h3>
+            <div class="checkbox-box mb-20">
+                <input type="checkbox" id="check3" disabled>
+                <label for="check3">
+                    <span></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+
+            <h3>checkbox 체크 disabled</h3>
+            <div class="checkbox-box mb-20">
+                <input type="checkbox" id="check4" disabled>
+                <label for="check4">
+                    <span class="on"></span>
+                    <h5>아이디 저장</h5>
+                </label>
+            </div>
+
+
+            <h3>checkbox 간격</h3>
+            <div class="mb-20">
+                <ul class="checkbox-box flex">
+                    <li class="item">
+                        <input type="checkbox" id="check4-1" disabled>
+                        <label for="check4-1">
+                            <span class="on"></span>
+                            <h5>아이디 저장</h5>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <input type="checkbox" id="check4-2" checked>
+                        <label for="check4-2">
+                            <span class="on"></span>
+                            <h5>아이디 저장</h5>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <input type="checkbox" id="check4-3">
+                        <label for="check4-3">
+                            <span class="on"></span>
+                            <h5>아이디 저장</h5>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div>
+        <h2>Switch Button Setting</h2>
+        <section>
+            <h3>switch button</h3>
+            <div class="switch-box">
+                <input type="checkbox" id="switch" autocomplete="off">
+                <label for="switch" class="switch">
+                    <span class="onf-btn"></span>
+                </label>
+            </div>
+        </section>
+    </div>
+
+    <div>
+        <h2>Padding Box Setting</h2>
+        <section>
+            <div class="content-box">
+                <div class="content">
+                    <div class="top">
+                        <h4>브랜드 정보</h4>
+                    </div>
+                    <div class="middle">
+                        <div class="grid-box">
+                            <label for="g1" class="input-box item">
+                                <h5 class="font-gray">1개 경우</h5>
+                                <input class="error" id="g1" type="text" placeholder="1개 경우">
+                                <span class="hint">1개 경우</span>
+                            </label>
+                        </div>
+
+                        <div class="grid-box g2">
+                            <label for="g2-1" class="input-box item">
+                                <h5 class="font-gray">2개 경우</h5>
+                                <input id="g2-1" type="text" placeholder="2개 경우" disabled>
+                                <span class="hint">2개 경우</span>
+                            </label>
+                            <label for="g2-2" class="input-box item">
+                                <h5 class="font-gray">2개 경우</h5>
+                                <input id="g2-2" type="text" placeholder="2개 경우">
+                                <span class="hint">2개 경우</span>
+                            </label>
+                        </div>
+
+                        <div class="grid-box g3">
+                            <label for="g3-1" class="input-box item">
+                                <h5 class="font-gray">3개 경우</h5>
+                                <input id="g3-1" type="text" placeholder="3개 경우">
+                                <span class="hint">3개 경우</span>
+                            </label>
+                            <label for="g3-2" class="input-box item">
+                                <h5 class="font-gray">3개 경우</h5>
+                                <input id="g3-2" type="text" placeholder="3개 경우">
+                                <span class="hint">3개 경우</span>
+                            </label>
+                            <label for="g3-3" class="input-box item">
+                                <h5 class="font-gray">3개 경우</h5>
+                                <input id="g3-3" type="text" placeholder="3개 경우">
+                                <span class="hint">3개 경우</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <button class="btn-white">취소</button>
+                        <button class="btn-blue">정보수정</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div style="position: relative;">
+        <h2>Pagination Setting</h2>
+        <div class="pagination-box">
+            <div class="page-num">
+                <div class="item">
+                    <h5 class="font-gray">Row per page</h5>
+                    <select class="s-select">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <h5>Go to</h5>
+                    <label for="page" class="input-box">
+                        <input id="page" type="text" class="s-input" value="1">
+                    </label>
+                </div>
+            </div>
+            <div class="pagination">
+                <div class="page-area">
+                    <button class="paging-btn first" href="#" disabled></button>
+                    <button class="paging-btn prev" href="#"></button>
+                    <a class="num" href="#">1</a>
+                    <a class="num on" href="#">2</a>
+                    <a class="num" href="#">3</a>
+                    <a class="num" href="#">4</a>
+                    <a class="num" href="#">5</a>
+                    <a class="view" href="#"></a>
+                    <a class="num" href="#">200</a>
+                    <button class="paging-btn next" href="#"></button>
+                    <button class="paging-btn last" href="#"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>Select Setting</h2>
+        <div class="mb-20">
+            <h3>Select 기본</h3>
+            <select>
+                <option>가입상태 전체</option>
+                <option>가입</option>
+                <option>상태</option>
+                <option>전체</option>
+            </select>
+        </div>
+        <div class="mb-20">
+            <h3>Select 불가</h3>
+            <select class="disabled">
+                <option>가입상태 전체</option>
+                <option>가입</option>
+                <option>상태</option>
+                <option>전체</option>
+            </select>
+        </div>
+        <div class="mb-20">
+            <h3>Small Select</h3>
+            <select class="s-select">
+                <option>가입상태 전체</option>
+                <option>가입</option>
+                <option>상태</option>
+                <option>전체</option>
+            </select>
+        </div>
+        <div class="mb-20">
+            <h3>Small Select 불가</h3>
+            <select class="s-select disabled">
+                <option>가입상태 전체</option>
+                <option>가입</option>
+                <option>상태</option>
+                <option>전체</option>
+            </select>
+        </div>
+        <div class="mb-20">
+            <h3>Multi select & filter</h3>
+            <select name="sample" multiple>
+                <option>가입</option>
+                <option>상태</option>
+                <option>전체</option>
+            </select>
+        </div>
+        <div class="mb-20">
+            <h3>Select error</h3>
+            <select class="error">
+                <option>가입상태 전체</option>
+                <option>가입</option>
+                <option>상태</option>
+                <option>전체</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <h2>Breadcrumbs & PageHeader Setting</h2>
+        <ul class="page-nav-box">
+            <li class="item"><a href="#"><h5>Home</h5></a></li>
+            <li class="item"><a href="#"><h5>Plugins</h5></a></li>
+            <li class="item"><a href="#"><h5>Clipboard</h5></a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Input Setting</h2>
+        <form action="" method="get">
+            <h3>input</h3>
+            <label for="user_id" class="input-box">
+                <h5 class="font-gray">아이디</h5>
+                <input id="user_id" type="text" placeholder="아이디 입력">
+                <span class="hint">아이디가 일치하지 않습니다</span>
+            </label>
+
+            <h3>input 에러</h3>
+            <label for="user_id" class="input-box">
+                <h5 class="font-gray star">아이디</h5>
+                <input id="user_id" type="text" class="error" placeholder="아이디 입력">
+                <span class="hint">아이디가 일치하지 않습니다</span>
+            </label>
+
+            <h3>input 검색</h3>
+            <label for="user_id" class="input-box">
+                <h5 class="font-gray">아이디</h5>
+                <div class="item">
+                    <input id="user_id" type="search" class="error" placeholder="사업자 번호 또는 사업자명을 입력하세요">
+                    <span class="hint">아이디가 일치하지 않습니다</span>
+                    <button class="search"></button>
+                </div>
+            </label>
+            <h3>input 검색 - no title</h3>
+            <label for="" class="input-box">
+                <div class="item">
+                    <input id="" type="search" class="error" placeholder="검색">
+                    <button class="search"></button>
+                </div>
+            </label>
+
+            <h3>input 비활성화</h3>
+            <label for="user_pw" class="input-box">
+                <h5 class="font-gray">비밀번호</h5>
+                <div class="item">
+                    <input id="user_pw" type="password" placeholder="비밀번호 입력" disabled>
+                    <button class="password"></button>
+                </div>
+            </label>
+
+            <h3>input right text 한글자</h3>
+            <label for="right" class="input-box">
+                <h5 class="font-gray">회당 사용 금액</h5>
+                <div class="item right">
+                    <input id="right" type="text" placeholder="" value="0">
+                    <span class="txt">원</span>
+                </div>
+            </label>
+
+            <h3>input right text 두글자</h3>
+            <label for="right" class="input-box">
+                <h5 class="font-gray">회당 사용 금액</h5>
+                <div class="item right">
+                    <input id="right" type="text" placeholder="" value="0">
+                    <span class="txt2">EA</span>
+                </div>
+            </label>
+
+            <h3>input right text + Text Align right</h3>
+            <label for="align-right-unit" class="input-box right input-txtr">
+                <h5 class="font-gray">회당 사용 금액</h5>
+                <div class="item">
+                    <input id="align-right-unit" type="text" placeholder="" value="100">
+                    <span class="txt2">EA</span>
+                </div>
+            </label>
+
+        </form>
+    </div>
+
+    <div>
+        <h2>Button Setting</h2>
+        <form action="" method="get">
+            <h3>Small Button</h3>
+            <div class="btn-box">
+                <button class="s-btn btn-white">로그인</button>
+                <button class="s-btn btn-white icon b-plus">로그인</button>
+                <button class="s-btn btn-blue icon w-plus">로그인</button>
+                <button class="s-btn btn-blue">로그인</button>
+                <button class="s-btn btn-red">로그인</button>
+                <button class="s-btn btn-text">로그인</button>
+                <button class="s-btn btn-text" disabled>로그인</button>
+            </div>
+
+            <h3>Medium Button (기본)</h3>
+            <div class="btn-box">
+                <button class="btn-white">로그인</button>
+                <button class="btn-blue">로그인</button>
+                <button class="btn-red">로그인</button>
+                <button class="btn-text">로그인</button>
+                <button class="btn-text" disabled>로그인</button>
+            </div>
+
+            <h3>Large Button</h3>
+            <div class="btn-box">
+                <button class="btn-white">로그인</button>
+                <button class="btn-blue">로그인</button>
+                <button class="btn-red">로그인</button>
+                <button class="btn-text">로그인</button>
+                <button class="btn-text" disabled>로그인</button>
+            </div>
+
+            <h3>Img Upload</h3>
+            <div class="img-upload">
+                <label class="img_drag" for="img_input" id="img_drag">
+                    <div class="inner"></div>
+                </label>
+                <input accept="image/*" class="img_input" hidden="true" id="img_input" multiple="true" required="true" type="file">
+            </div>
+
+            <div class="img-upload sm">
+                <label class="img_drag" for="img_input" id="img_drag">
+                    <div class="inner"></div>
+                </label>
+                <input accept="image/*" class="img_input" hidden="true" id="img_input" multiple="true" required="true" type="file">
+            </div>
+
+            <div class="img-upload lg">
+                <label class="img_drag" for="img_input" id="img_drag">
+                    <div class="inner"></div>
+                </label>
+                <input accept="image/*" class="img_input" hidden="true" id="img_input" multiple="true" required="true" type="file">
+            </div>
+
+            <!-- <div class="btn-box">
+                <button class="btn-upload">Upload</button>
+                <button class="btn-upload-sm">Upload</button>
+                <script>
+                    $('[class*="btn-upload"]').on('click', ((e)=>{
+                        e.preventDefault();
+                        $(e.currentTarget).toggleClass('uploaded')
+                    }))
+                </script>
+            </div> 20240614 img upload 퍼블리싱 수정 -->
+
+            <h3 class="mt-20">Input File Upload</h3>
+            <div class="input-btn-box file-box">
+                <div class="upload-file-name"></div>
+                <input type="file" id="file1" hidden="true">
+                <label for="file1"><button class="btn-white input-btn icon b-clip">파일 선택</button></label>
+            </div>
+            <h3 class="mt-20">Input File Upload - 다중 선택</h3>
+            <div class="input-btn-box file-box">
+                <div class="upload-file-name"></div>
+                <input type="file" id="file" hidden="true" multiple> <!-- 다중 선택 -->
+                <label for="file"><button class="btn-white input-btn">파일 업로드</button></label>
+            </div>
+
+            <h3 class="mt-20">Edit Button</h3>
+            <button class="btn-edit">수정하기</button>
+            <h3 class="mt-20">Input Button</h3>
+            <div class="input-btn-box">
+                <input id="" type="text" placeholder="텍스트 입력하세요">
+                <button class="btn-blue input-btn">로그인</button>
+            </div>
+
+
+
+            <div class="mt-20">
+                <h3>Button Group</h3>
+                <div class="btn-group" tabindex="0">
+                    <span class="current">강제 처리</span>
+                    <div class="list">
+                        <div class="line">
+                            <button class="option focus">CJ</button>
+                            <button class="option">CGV</button>
+                        </div>
+                        <button class="option">올리브영</button>
+                        <button class="option">폴 바셋</button>
+                        <button class="option">CJ 더마켓</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 20240619 button group 퍼블리싱 추가 -->
+        </form>
+    </div>
+
+    <div>
+        <h2 class="mb-20">Description Box</h2>
+        <div class="middle">
+            <div class="grid-box g2">
+                <div class="content-box padding-box">
+                    <dl>
+                        <dt>소명 일자</dt>
+                        <dd>발급일로부터 N일</dd>
+                    </dl>
+                    <dl>
+                        <dt>유효기간 부여 조건</dt>
+                        <dd>유효기간 일수 부여</dd>
+                    </dl>
+                    <dl>
+                        <dt>유효기간</dt>
+                        <dd>발급일로부터 N일</dd>
+                    </dl>
+                    <dl>
+                        <dt>유효일자</dt>
+                        <dd>-</dd>
+                    </dl>
+                    <dl>
+                        <dt>유효기간 연장 가능</dt>
+                        <dd>연장 가능</dd>
+                    </dl>
+                    <dl>
+                        <dt>유효기간 연장 대상</dt>
+                        <dd>모두 가능</dd>
+                    </dl>
+                    <dl>
+                        <dt>유효기간 만료 안내 발송</dt>
+                        <dd>발송</dd>
+                    </dl>
+                    <dl>
+                        <dt>연장 불가 안내 메시지</dt>
+                        <dd>본 상품은 유효기간 연장이 불가능한 상품입니다.</dd>
+                    </dl>
+                    <dl>
+                        <dt>환불 가능 여부</dt>
+                        <dd>환불 가능</dd>
+                    </dl>
+                    <dl>
+                        <dt>환불 기준 금액</dt>
+                        <dd>유효 기간 만료 후 N%</dd>
+                    </dl>
+                    <dl>
+                        <dt>환불 불가 안내 메시지</dt>
+                        <dd>이벤트를 통해 구매한 상품권은 환불이 불가능합니다</dd>
+                    </dl>
+                </div>
+                <div class="flex flex-d-column">
+                    <div class="content-box padding-box mb-20">
+                        <dl>
+                            <dt>쿠폰 발송 템플릿</dt>
+                            <dd>CJ 공통 쿠폰 템플릿</dd>
+                        </dl>
+                        <dl>
+                            <dt>상품권 고시 정보 선택</dt>
+                            <dd>CJ B2C 고시 안내</dd>
+                        </dl>
+                        <dl>
+                            <dt>정산 대상 채널</dt>
+                            <dd>사용 채널</dd>
+                        </dl>
+                        <dl>
+                            <dt>발급 채널</dt>
+                            <dd>CJ 올리브 네트웍스</dd>
+                        </dl>
+                        <dl>
+                            <dt>발급 채널 정산 정책</dt>
+                            <dd>-</dd>
+                        </dl>
+                    </div>
+                    <div class="content-box padding-box">
+                        <dl>
+                            <dt>사용 채널</dt>
+                            <dd>사용 채널 정산 정책</dd>
+                        </dl>
+                        <dl>
+                            <dt>투썸 플레이스 매장</dt>
+                            <dd>B2C 정산 7% 정책</dd>
+                        </dl>
+                        <dl>
+                            <dt>올리브영 온라인몰</dt>
+                            <dd>B2C 온라인 정산 7.1%</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="mb-20">Dropdown Box</h2>
+
+        <div class="dropdown-box left">
+            <button class="btn-menu"><span></span></button>
+            <div class="dropdown-list">
+                <div>
+                    <button class="drop-title">
+                        <h5>브랜드 상품 관리</h5>
+                    </button>
+                </div>
+                <ul>
+                    <li><button><h5>상품 정보 조회/수정</h5></button></li>
+                    <li><button disabled><h5>인상 금액 관리</h5></button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown-box left">
+            <button class="btn-menu" disabled><span></span></button>
+            <div class="dropdown-list">
+                <div>
+                    <button class="drop-title">
+                        <h5>브랜드 상품 관리</h5>
+                    </button>
+                </div>
+                <ul>
+                    <li><button><h5>상품 정보 조회/수정</h5></button></li>
+                    <li><button disabled><h5>인상 금액 관리</h5></button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown-box right flex j-end">
+            <button class="btn-blue">상품 등록</button>
+            <div class="dropdown-list">
+                <div>
+                    <button class="drop-title">
+                        <h5>Sample</h5>
+                    </button>
+                </div>
+                <ul>
+                    <li><button><h5>Sample</h5></button></li>
+                    <li><button><h5>Sample</h5></button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="mb-20">DatePicker</h2>
+
+        <div class="grid-box g2">
+            <div class="input-box">
+                <h5>단일 선택</h5>
+                <div class="input-datepicker">
+                    <input type="text" date-picker placeholder="날짜 선택">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-box g2">
+            <div class="input-box">
+                <h5>범위 선택</h5>
+                <div class="input-datepicker">
+                    <input type="text" id="date" date-picker placeholder="기간 선택" multiple>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="mb-20">그리드 분할</h2>
+        <h4 class="mb-10">- 가로 균등 분할 : .grid-row-container 하위로 .grid-row-item N개 유동적</h4>
+        <div class="grid-row-container mb-20">
+            <div class="grid-row-item">
+                <div class="content-box padding-box">내용1</div>
+            </div>
+            <div class="grid-row-item">
+                <div class="content-box padding-box">여기 내용 높이가 유독 길어질 경우 이렇게 나옴</div>
+            </div>
+            <div class="grid-row-item">
+                <div class="content-box padding-box">내용</div>
+            </div>
+        </div>
+        <div class="grid-row-container mb-20">
+            <div class="grid-row-item">
+                <div class="content-box padding-box">내용1</div>
+            </div>
+            <div class="grid-row-item">
+                <div class="content-box padding-box">내용2</div>
+            </div>
+        </div>
+        <h4 class="mb-10">- 고정 + 나머지 균등 분할 및 채우기: 고정 .grid-row-item에 .fix-width 추가 + width 설정</h4>
+        <div class="grid-row-container mb-20">
+            <div class="grid-row-item fix-width w-160">
+                <div class="content-box padding-box">width 160 고정</div>
+            </div>
+            <div class="grid-row-item"><div class="content-box padding-box">나머지 균등</div></div>
+            <div class="grid-row-item"><div class="content-box padding-box">나머지 균등</div></div>
+        </div>
+        <div class="grid-row-container mb-20">
+            <div class="grid-row-item fix-width w-200">
+                <div class="content-box padding-box">width 200 고정</div>
+            </div>
+            <div class="grid-row-item"><div class="content-box padding-box">나머지 균등</div></div>
+        </div>
+    </div>
+</body>
+<script>
+    const DATE_RANGE_PICKER_DEFAULT_OPTIONS = {
+        ranges: {
+            "Today": [moment(), moment()],
+            "Yesterday": [moment().subtract(1, "days"), moment().subtract(1, "days")],
+            "Last 7 Days": [moment().subtract(6, "days"), moment()],
+            "Last 30 Days": [moment().subtract(29, "days"), moment()],
+            "This Month": [moment().startOf("month"), moment().endOf("month")],
+            "Last Month": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
+        },
+        locale: {
+            "separator": " ~ ",			// 시작일시와 종료일시 구분자
+            "format": "yyyy-MM-DD", // 일시 노출 포맷
+            "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+            "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+        }
+    }
+
+    const initialize = () => {
+        const startDate = moment().subtract(1, "years").format("yyyy-MM-DD");
+        const endDate = moment().format("yyyy-MM-DD");
+        $('#date').daterangepicker({startDate, endDate,...DATE_RANGE_PICKER_DEFAULT_OPTIONS}, selectedDate);
+        const startDateObj = $("input[name='startDate']");
+        const endDateObj = $("input[name='endDate']");
+        startDateObj.val(startDate);
+        endDateObj.val(endDate);
+    }
+
+    // 날짜 선택
+    const selectedDate = (start, end) => {
+        const startDate = moment(start.format('yyyy-MM-DD'));
+        const endDate = moment(end.format('yyyy-MM-DD'));
+        $("input[name='startDate']").val(start.format('yyyy-MM-DD'));
+        $("input[name='endDate']").val(end.format('yyyy-MM-DD'));
+    }
+    initialize();
+
+</script>
+</html>

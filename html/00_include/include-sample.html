@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Layout</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function(){
+            $("#side").load("/html/000_include/include-side-menu.html"); 
+            $("#header").load("/html/000_include/include-header.html"); 
+        });
+        // include
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#"><h5>기본정보</h5></a></li>
+                            <li class="item"><a href="#"><h5>브랜드</h5></a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">브랜드</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <div class="content-box">
+                            <div class="top">
+
+                            </div>
+                            <!-- top end -->
+                            <div class="middle">
+
+
+                            </div>
+                            <!-- middle end -->
+                            <div class="bottom">
+
+                            </div>
+                            <!-- bottom end -->
+                        </div>
+                        <!-- content-box end -->
+                    </div>
+                    <!-- padding-box end -->
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>

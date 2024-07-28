@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>CJONE-OGO-BO site map</title>
+    <style>
+        .hov {
+            background-color: white;
+        }
+
+        .hov:hover {
+            background-color: seashell;
+        }
+
+        table {
+            border: 1px solid darkgray;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid darkgray;
+            padding: 10px;
+        }
+        td > span{
+            display: block;
+            text-align: center;
+        }
+        .first{
+            border-top:2px solid #000;
+        }
+    </style>
+</head>
+<body style="font-size:12px;">
+    <h1>CJONES-OGO-BO publish site map</h1>
+
+    <table style="width: 90%;">
+        <thead style="text-align: center; background-color:#eeeeee;height:25px">
+            <tr>
+                <th style="width:80px">index</th>
+                <th style="width: 10%">폴더명</th>
+                <th style="width: 15%">피그마 title</th>
+                <th style="width: 10%">기획서 화면 ID</th>
+                <th style="width: 20%">설명</th>
+                <th>URL</th>
+                <th style="width: 5%">생성일</th>
+                <th style="width: 5%">생성자</th>
+                <th style="width: 5%">수정일</th>
+                <th style="width: 5%">수정자</th>
+            </tr>
+        </thead>
+        <tbody style="text-align: left" id="siteMapContents">
+        </tbody>
+    </table>
+
+    <script>
+        const siteMapContents = [
+            {
+                'type' : 'first',
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '가이드',
+                'url' : '/html/00_sample/sample-info.html',
+                'createDate' : '2024.06.10',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '로그인 레이아웃',
+                'url' : '/html/00_sample/sample-login-layout.html',
+                'createDate' : '2024.06.10',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '메인 레이아웃',
+                'url' : '/html/00_sample/sample-main-layout.html',
+                'createDate' : '2024.06.10',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '메인 레이아웃2',
+                'url' : '/html/00_sample/sample-main-layout2.html',
+                'createDate' : '2024.06.10',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '팝업 레이아웃',
+                'url' : '/html/00_sample/sample-popup-layout.html',
+                'createDate' : '2024.06.10',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '메인 테이블 레이아웃',
+                'url' : '/html/00_sample/sample-main-table.html',
+                'createDate' : '2024.06.11',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '',
+                'depth1' : '00_sample',
+                'depth2' : '',
+                'depth3' : '',
+                'desc': '메인 텝 레이아웃',
+                'url' : '/html/00_sample/sample-main-tab.html',
+                'createDate' : '2024.06.11',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'type' : 'first',
+                'idxNum' : '1-1',
+                'depth1' : '01_Login',
+                'depth2' : 'Main',
+                'depth3' : '',
+                'desc': '로그인 메인 화면',
+                'url' : '/html/01_login/login.html',
+                'createDate' : '2024.06.10',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '1-4',
+                'depth1' : '01_Login',
+                'depth2' : '회원가입',
+                'depth3' : '',
+                'desc': '회원가입 팝업',
+                'url' : '/html/01_login/01singup.html',
+                'createDate' : '2024.06.13',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            // 사업자
+            {
+                'type' : 'first',
+                'idxNum' : '2-1',
+                'depth1' : '02_business',
+                'depth2' : '사업자/목록',
+                'depth3' : 'IA-102-001',
+                'desc': '사업자 홈 테이블',
+                'url' : '/html/02_business/01business-table.html',
+                'createDate' : '2024.06.12',
+                'creator' : '강수진',
+                'editDate' : '2024.06.23',
+                'editor' : '김유미'
+            },
+            {
+                'idxNum' : '2-2',
+                'depth1' : '02_business',
+                'depth2' : '사업자/등록',
+                'depth3' : 'IA-102-002',
+                'desc': '사업자 등록 - 조회 없음',
+                'url' : '/html/02_business/02business-register-nodata.html',
+                'createDate' : '2024.06.14',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '2-3',
+                'depth1' : '02_business',
+                'depth2' : '사업자/등록',
+                'depth3' : 'IA-102-002',
+                'desc': '사업자 등록',
+                'url' : '/html/02_business/02business-register.html',
+                'createDate' : '2024.06.14',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '2-4',
+                'depth1' : '02_business',
+                'depth2' : '사업자/정보',
+                'depth3' : 'IA-102-004',
+                'desc': '사업자 정보',
+                'url' : '/html/02_business/03business-info.html',
+                'createDate' : '2024.06.14',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            // brand
+            {
+                'type' : 'first',
+                'idxNum' : '3-1',
+                'depth1' : '03_brand',
+                'depth2' : '브랜드/목록',
+                'depth3' : 'IA-103-001',
+                'desc': '브랜드 전체 목록',
+                'url' : '/html/03_brand/01brand-list.html',
+                'createDate' : '2024.06.14',
+                'creator' : '유승연',
+                'editDate' : '2024.06.23',
+                'editor' : '강수진'
+            },
+            {
+                'idxNum' : '3-3',
+                'depth1' : '03_brand',
+                'depth2' : '브랜드 / 등록 - Modal',
+                'depth3' : 'IA-103-003',
+                'desc': '카테고리 관리 모달',
+                'url' : '/html/03_brand/02brand-register-modal01.html',
+                'createDate' : '2024.06.14',
+                'creator' : '유승연',
+                'editDate' : '2024.06.23',
+                'editor' : '강수진'
+            },
+            /* 04 Channel*/
+            {
+                'type' : 'first',
+                'idxNum' : '4-1',
+                'depth1' : '04_channel',
+                'depth2' : '채널 / 목록',
+                'depth3' : 'IA-107-001',
+                'desc': '채널 목록',
+                'url' : '/html/04_channel/01channel.html',
+                'createDate' : '2024.06.23',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '4-2',
+                'depth1' : '04_channel',
+                'depth2' : '채널 / 채널 등록',
+                'depth3' : 'IA-107-002',
+                'desc': '채널 등록',
+                'url' : '/html/04_channel/02channel-register.html',
+                'createDate' : '2024.06.23',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+            {
+                'idxNum' : '4-3',
+                'depth1' : '04_channel',
+                'depth2' : '채널 / 정보',
+                'depth3' : 'IA-107-003',
+                'desc': '채널 상세 정보',
+                'url' : '/html/04_channel/03channel-report.html',
+                'createDate' : '2024.06.23',
+                'creator' : '강수진',
+                'editDate' : '',
+                'editor' : ''
+            },
+        ];
+
+        const siteTable = document.getElementById('siteMapContents');
+        let thisRow;
+
+        siteMapContents.forEach(function(data, idx){
+            thisRow = siteTable.insertRow();
+            thisRow.className = 'hov';
+            thisRow.insertCell(0).innerHTML = `<span>${data.idxNum}</span>`;
+            thisRow.insertCell(1).innerText = data.depth1;
+            thisRow.insertCell(2).innerText = data.depth2;
+            thisRow.insertCell(3).innerText = data.depth3;
+            thisRow.insertCell(4).innerText = data.desc;
+            thisRow.insertCell(5).innerHTML = `<a href="${data.url}" target="_blank">${data.url}</a>`;
+            thisRow.insertCell(6).innerText = data.createDate;
+            thisRow.insertCell(7).innerText = data.creator;
+            thisRow.insertCell(8).innerText = data.editDate;
+            thisRow.insertCell(9).innerText = data.editor;
+
+            if(data.type){
+                thisRow.className = 'hov first';
+            }
+        });
+    </script>
+</body>
+</html>

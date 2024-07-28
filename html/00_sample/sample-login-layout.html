@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Layout</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+</head>
+<body>
+    <div id="login">
+        <h1 class="logo"><a href="#"><img src="/images/logo.svg" alt="CJ ONE LOGO"></a></h1>
+        <div class="login-box">
+            <h3 class="title">로그인</h3>
+            <form action="" method="get">
+                <label for="user_id" class="input-box mb-20">
+                    <h5 class="star">아이디</h5>
+                    <input id="user_id" type="text" placeholder="아이디 입력">
+                </label>
+                <label for="user_pw" class="input-box mb-20">
+                    <h5>비밀번호</h5>
+                    <div class="item">
+                        <input id="user_pw" type="password" placeholder="비밀번호 입력" disabled>
+                        <button class="password"></button>
+                    </div>
+                </label>
+                <div class="checkbox-box mb-20">
+                    <input type="checkbox" id="user_id_save">
+                    <label for="user_id_save">
+                        <span></span>
+                        <h5>아이디 저장</h5>
+                    </label>
+                </div>
+                <div class="item mb-20">
+                    <button class="la-btn btn-blue full-btn">로그인</button>
+                </div>
+            </form>
+            <ul class="login-info">
+                <li class="item"><a href="#"><h6>회원가입</h6></a></li>
+                <li class="item"><a href="#"><h6>아이디 찾기</h6></a></li>
+                <li class="item"><a href="#"><h6>비밀번호 재설정</h6></a></li>
+                <li class="item"><a href="#"><h6>계정 잠금해제</h6></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

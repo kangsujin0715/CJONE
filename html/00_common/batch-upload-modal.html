@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수신자 업로드 팝업</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/bpopup/jquery.bpopup.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/selectbox/filter-multi-select-bundle.min.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function () {
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+<body>
+    <!-- popup -->
+    <!-- 파일 업로드 -->
+    <div class="popup on" id="batch-upload-popup">
+        <div class="dim">
+            <div class="content-box w-600">
+                <div class="top">
+                    <h4 class="title">파일 업로드</h4>
+                    <button class="close-btn"></button>
+                </div>
+                <!-- top end -->
+                <div class="middle">
+                    <div class="grid-box">
+                        <label for="file" class="input-box item">
+                            <h5 class="font-gray">첨부 파일</h5>
+                            <div class="input-btn-box file-box">
+                                <div class="upload-file-name"></div>
+                                <input type="file" id="file" hidden="true">
+                                <label for="file"><button class="btn-white input-btn icon b-clip">파일 선택</button></label>
+                            </div>
+                        </label>
+
+                        <div class="item py-8">
+                            <p class="fs-14 font-orange-2 ml-10">※ 검증 결과가 모두 성공일 때만 업로드 완료 처리가 가능합니다.</p>
+                        </div>
+                        
+                        <!-- 검증 결과 있을 때 start -->
+                        <div class="item">
+                            <h5 class="font-gray mb-8">검증 결과</h5>
+                            <ul class="split-desc ml-0">
+                                <li class="item"><h5 class="font-blue">정상:100건</h5></li>
+                                <li class="item"><h5 class="font-red-2">실패:100건</h5></li>
+                                <li class="item"><h5 class="font-orange-3">중복:4건</h5></li>
+                            </ul>
+                            <!-- 실패 있을 때 start -->
+                            <div class="verify-result-wrap">
+                                <div class="verify-result">
+                                    <p>LINE 1: 오류, 매장코드 오류</p>
+                                    <p>LINE 2: 오류, 매장코드 오류</p>
+                                    <p>LINE 3: 오류, 매장코드 오류</p>
+                                    <p>LINE 4: 오류, 매장코드 오류</p>
+                                    <p>LINE 5: 오류, 매장코드 오류</p>
+                                    <p>LINE 6: 오류, 매장코드 오류</p>
+                                    <p>LINE 7: 오류, 매장코드 오류</p>
+                                    <p>LINE 8: 오류, 매장코드 오류</p>
+                                    <p>LINE 9: 오류, 매장코드 오류</p>
+                                    <p>LINE 10: 오류, 매장코드 오류</p>
+                                    <p>LINE 11: 오류, 매장코드 오류</p>
+                                    <p>LINE 12: 오류, 매장코드 오류</p>
+                                    <p>LINE 13: 오류, 매장코드 오류</p>
+                                    <p>LINE 14: 오류, 매장코드 오류</p>
+                                </div>
+                            </div>
+                            <!-- 실패 있을 때 end -->
+                        </div>
+                        <!-- 검증 결과 없을 때 end -->
+                    </div>
+                </div>
+                <!-- middle end -->
+                <div class="bottom">
+                    <button class="btn-white">취소</button>
+                    <button class="btn-blueBorder">검증 요청</button>
+                    <button class="btn-blue">업로드 완료</button>
+                </div>
+                <!-- bottom end -->
+            </div>
+            <!-- content-box end -->
+        </div>
+    </div>
+
+</body>
+</html>

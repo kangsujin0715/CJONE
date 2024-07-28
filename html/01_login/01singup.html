@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 팝업</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function(){
+            $("#side").load("/html/000_include/include-side-menu.html"); 
+            $("#header").load("/html/000_include/include-header.html"); 
+        });
+        // include
+    </script>
+</head>
+<body>
+    <div class="popup on">
+        <div class="dim">
+            <div class="content-box w-600">
+                <div class="top">
+                    <h4 class="title">회원가입</h4>
+                    <p>회원가입을 위한 정보를 입력하세요.</p>
+                    <button class="close-btn"></button>
+                </div>
+                <!-- top end -->
+                <div class="middle">
+                    <div class="error-box">
+                        <div>
+                            <h5>반려 사유</h5>
+                            <p>한도 이유로 반려합니다. 한도를 수정해서 다시 신청해주세요.</p>
+                        </div>
+                    </div>
+                    <div class="grid-box g2">
+                        <label for="user_name" class="input-box">
+                            <h5 class="font-gray star">이름</h5>
+                            <input id="user_name" type="text" placeholder="이름을 입력해주세요.">
+                        </label>
+                        <label for="user_id1" class="input-box">
+                            <h5 class="font-gray star">아이디</h5>
+                            <input id="user_id1" type="text" placeholder="아이디를 입력해주세요.">
+                            <span class="hint">영문, 숫자 혼합하여 4자리 이상</span>
+                        </label>
+                    </div>
+                    
+                    <div class="grid-box g2">
+                        <label for="user_pw1" class="input-box item">
+                            <h5 class="font-gray star">비밀번호</h5>
+                            <div class="item">
+                                <input id="user_pw1" type="password" placeholder="비밀번호를 입력해주세요.">
+                                <button class="password"></button>
+                                <span class="hint">영문, 숫자, 특수문자 혼합하여 8자리 이상</span>
+                            </div>
+                        </label>
+                        <label for="user_pw2" class="input-box item">
+                            <h5 class="font-gray star">비밀번호 확인</h5>
+                            <div class="item">
+                                <input id="user_pw2" type="password" placeholder="비밀번호 다시입력">
+                                <button class="password"></button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="grid-box g2">
+                        <label for="user_call" class="input-box item">
+                            <h5 class="font-gray star">휴대폰번호</h5>
+                            <input id="user_call" type="number" placeholder="'-'없이 숫자만 입력">
+                        </label>
+                        <label for="user_business" class="input-box item">
+                            <h5 class="font-gray star">사업자</h5>
+                            <div class="item">
+                                <input id="user_business" type="search" placeholder="사업자 번호 또는 사업자명을 입력하세요">
+                                <button class="search"></button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="grid-box g2">
+                        <label for="user_email" class="input-box item">
+                            <h5 class="font-gray star">이메일</h5>
+                            <div class="input-btn-box">
+                                <div class="grow">
+                                    <input id="user_email" type="email" placeholder="">
+                                </div>
+                                <button class="btn-white input-btn">인증번호 요청</button>
+                            </div>
+                        </label>
+                        <label for="user_emailnum" class="input-box item">
+                            <h5 class="font-gray star">이메일 인증번호</h5>
+                            <div class="input-btn-box">
+                                <div class="grow item">
+                                    <input id="user_emailnum" type="text" placeholder="">
+                                    <span class="txt timer">5:00</span>
+                                </div>
+                                <button class="btn-white input-btn">인증 확인</button>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="grid-box g2">
+                        <label for="user_work" class="input-box item">
+                            <h5 class="font-gray star">담당업무</h5>
+                            <select>
+                                <option>선택</option>
+                                <option>담당</option>
+                                <option>업무</option>
+                            </select>
+                        </label>
+                        <div class="input-box item">
+                            <h5 class="font-gray">2단계 로그인 인증</h5>
+                            <ul class="radio-box flex">
+                                <li class="item">
+                                    <input type="radio" id="radio5-1" name="radio" checked>
+                                    <label for="radio5-1">
+                                        <span></span>
+                                        <h5>OPT 인증</h5>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <input type="radio" id="radio5-2" name="radio">
+                                    <label for="radio5-2">
+                                        <span></span>
+                                        <h5>이메일 인증</h5>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <ul class="notice">
+                        <li>※ 비밀번호는 아이디, 휴대폰번호와 동일하게 사용할 수 없습니다.</li>
+                        <li>※ 비밀번호는 연속된 3자리 이상의 문자(123, abc), 동일한 3자리 이상의 문자 (111, aaa) 를 사용할 수 없습니다.</li>
+                    </ul>
+                </div>
+                <!-- middle end -->
+                <div class="bottom">
+                    <button class="btn-white">취소</button>
+                    <button class="btn-blue">가입 신청</button>
+                </div>
+                <!-- bottom end -->
+            </div>
+            <!-- content-box end -->
+        </div>
+    </div>
+    <!-- popup -->
+
+    <div id="login">
+        <h1 class="logo"><a href="#"><img src="/images/logo.svg" alt="CJ ONE LOGO"></a></h1>
+        <div class="login-box">
+            <h3 class="title">로그인</h3>
+            <form action="" method="get">
+                <label for="user_id" class="input-box mb-20">
+                    <h5 class="star">아이디</h5>
+                    <input id="user_id" type="text" placeholder="아이디 입력">
+                </label>
+                <label for="user_pw" class="input-box mb-20">
+                    <h5>비밀번호</h5>
+                    <div class="item">
+                        <input id="user_pw" type="password" placeholder="비밀번호 입력">
+                        <button class="password"></button>
+                    </div>
+                </label>
+                <div class="checkbox-box mb-20">
+                    <input type="checkbox" id="user_id_save">
+                    <label for="user_id_save">
+                        <span></span>
+                        <h5>아이디 저장</h5>
+                    </label>
+                </div>
+                <div class="item">
+                    <button class="la-btn btn-blue full-bt n">로그인</button>
+                </div>
+            </form>
+            <ul class="login-info mt-20">
+                <li class="item"><a href="#"><h6>회원가입</h6></a></li>
+                <li class="item"><a href="#"><h6>아이디 찾기</h6></a></li>
+                <li class="item"><a href="#"><h6>비밀번호 재설정</h6></a></li>
+                <li class="item"><a href="#"><h6>계정 잠금해제</h6></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

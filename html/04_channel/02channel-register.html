@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel-register</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/moment/moment-with-locales.min.js"></script>
+    <script src="/lib/rangepicker/daterangepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/bpopup/jquery.bpopup.min.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function () {
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#"><h5>홈</h5></a></li>
+                            <li class="item"><a href="#"><h5>채널</h5></a></li>
+                            <li class="item"><a href="#"><h5>채널 등록</h5></a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">채널 등록</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <ul class="grid-box w320">
+                            <li class="item">
+                                <div class="content-box">
+                                    <div class="top">
+                                        <h4>채널 유형 정보</h4>
+                                    </div>
+                                    <!-- top end -->
+                                    <div class="middle">
+                                        <div class="mb-16">
+                                            <p class="text-label star">유형 선택 (다중 선택 가능)</p>
+                                        </div>
+                                        <div class="checkbox-box">
+                                            <input type="checkbox" id="check1">
+                                            <label for="check1" class="h-100 mb-16 a-start">
+                                                <span></span>
+                                                <div>
+                                                    <h5>사용 채널</h5>
+                                                    <div class="fs-12 font-gray">발급된 브랜드 상품을 사용(인증) 할 수 있는<br>경로를 의미합니다.</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-box">
+                                            <input type="checkbox" id="check2">
+                                            <label for="check2" class="h-100 mb-16 a-start">
+                                                <span></span>
+                                                <div>
+                                                    <h5>판매 채널</h5>
+                                                    <div class="fs-12 font-gray">모바일 상품권을 사업자에게 판매하는<br>경로를 의미합니다.</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-box">
+                                            <input type="checkbox" id="check3">
+                                            <label for="check3" class="h-100 mb-16 a-start">
+                                                <span></span>
+                                                <div>
+                                                    <h5>발급 채널</h5>
+                                                    <div class="fs-12 font-gray">모바일 상품권이 발급되는 경로를 의미합니다.</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- middle end -->
+                                </div>
+                                <!-- content-box end -->
+                            </li>
+                            <li class="item">
+                                <div class="content-box mb-20">
+                                    <div class="top">
+                                        <h4>채널 기본 정보</h4>
+                                    </div>
+                                    <!-- top end -->
+                                    <div class="middle">
+                                        <div class="grid-box g2">
+                                            <div for="" class="input-box item">
+                                                <h5 class="font-gray star">채널명</h5>
+                                                <input id="" type="text" placeholder="채널명 입력">
+                                            </div>
+                                            <div for="" class="input-box item">
+                                                <h5 class="font-gray star">채널 코드</h5>
+                                                <input id="" type="text" placeholder="등록시 자동 부여" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="grid-box g2">
+                                            <div for="" class="input-box item">
+                                                <h5 class="font-gray star">채널 사업자</h5>
+                                                <select id="">
+                                                    <option>샘플</option>
+                                                    <option>샘플</option>
+                                                </select>
+                                            </div>
+                                            <div for="" class="input-box item">
+                                                <h5 class="font-gray star">채널 구분</h5>
+                                                <select id="">
+                                                    <option>샘플</option>
+                                                    <option>샘플</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="grid-box g2">
+                                            <div for="user_id" class="input-box item">
+                                                <h5 class="font-gray">외부 채널 코드(NICE 사용)</h5>
+                                                <input id="" type="text" placeholder="외부 채널 코드 입력">
+                                            </div>
+                                            <div for="user_id" class="input-box item">
+                                                <h5 class="font-gray">채널 메모</h5>
+                                                <input id="" type="text" placeholder="채널 메모 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- middle end -->
+                                </div>
+                                <div class="content-box">
+                                    <div class="top">
+                                        <h4>정산 주기 정보</h4>
+                                    </div>
+                                    <!-- top end -->
+                                    <div class="middle">
+                                        <div class="grid-box g2">
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">정산 대상</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio1-1" name="radio1" checked>
+                                                        <label for="radio1-1">
+                                                            <span></span>
+                                                            <h5>채널 기준</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio1-2" name="radio1">
+                                                        <label for="radio1-2">
+                                                            <span></span>
+                                                            <h5>매장별 기준</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">지급 조건</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio2-1" name="radio2" checked>
+                                                        <label for="radio2-1">
+                                                            <span></span>
+                                                            <h5>비상계</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio2-2" name="radio2">
+                                                        <label for="radio2-2">
+                                                            <span></span>
+                                                            <h5>상계</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid-box g2">
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">정산 주기</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio3-1" name="radio3" checked>
+                                                        <label for="radio3-1">
+                                                            <span></span>
+                                                            <h5>1개월</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio3-2" name="radio3">
+                                                        <label for="radio3-2">
+                                                            <span></span>
+                                                            <h5>1주</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio3-3" name="radio3">
+                                                        <label for="radio3-3">
+                                                            <span></span>
+                                                            <h5>2개월</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio3-4" name="radio3">
+                                                        <label for="radio3-4">
+                                                            <span></span>
+                                                            <h5>2주</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="item">
+                                                <div class="grid-row-container">
+                                                    <div class="input-box grid-row-item fix-width" style="width: 240px">
+                                                        <h5 class="text-label star">지급 기준</h5>
+                                                        <ul class="radio-box flex">
+                                                            <li class="item">
+                                                                <input type="radio" id="radio1-1" name="radio4" checked>
+                                                                <label for="radio4-1">
+                                                                    <span></span>
+                                                                    <h5>당월</h5>
+                                                                </label>
+                                                            </li>
+                                                            <li class="item">
+                                                                <input type="radio" id="radio4-2" name="radio4">
+                                                                <label for="radio4-2">
+                                                                    <span></span>
+                                                                    <h5>익월</h5>
+                                                                </label>
+                                                            </li>
+                                                            <li class="item">
+                                                                <input type="radio" id="radio4-2" name="radio4" disabled>
+                                                                <label for="radio4-2">
+                                                                    <span></span>
+                                                                    <h5>익주</h5>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="input-box grid-row-item fix-width" style="width: 100px">
+                                                        <h5 class="font-gray star">지급 일</h5>
+                                                        <select>
+                                                            <option>1</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-box g2">
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">지급 수단</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio5-1" name="radio5" checked>
+                                                        <label for="radio5-1">
+                                                            <span></span>
+                                                            <h5>현금</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio5-2" name="radio5">
+                                                        <label for="radio5-2">
+                                                            <span></span>
+                                                            <h5>어음</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">사내 거래</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio6-1" name="radio6" checked>
+                                                        <label for="radio6-1">
+                                                            <span></span>
+                                                            <h5>Y</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio6-2" name="radio6">
+                                                        <label for="radio6-2">
+                                                            <span></span>
+                                                            <h5>N</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid-box g2">
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">공문 사용(미사용 기본)</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio7-1" name="radio7" checked>
+                                                        <label for="radio7-1">
+                                                            <span></span>
+                                                            <h5>사용</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio7-2" name="radio7">
+                                                        <label for="radio7-2">
+                                                            <span></span>
+                                                            <h5>미사용</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="input-box item">
+                                                <h5 class="text-label star">공문 분할 발행</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio8-1" name="radio8" checked>
+                                                        <label for="radio8-1">
+                                                            <span></span>
+                                                            <h5>발행</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio8-2" name="radio8">
+                                                        <label for="radio8-2">
+                                                            <span></span>
+                                                            <h5>미발행</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- middle end -->
+                                </div>
+                                <!-- content-box end -->
+                            </li>
+                        </ul>
+                        <div class="bottom">
+                            <button class="btn-white">등록 취소</button>
+                            <button class="btn-blue">등록 완료</button>
+                        </div>
+                    </div>
+                    <!-- padding-box end -->        
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+</body>
+
+</html>

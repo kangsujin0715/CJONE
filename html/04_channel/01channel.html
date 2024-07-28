@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel-request</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/bpopup/jquery.bpopup.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/selectbox/filter-multi-select-bundle.min.js"></script>
+    <script src="/lib/moment/moment-with-locales.min.js"></script>
+    <script src="/lib/rangepicker/daterangepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function(){
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#"><h5>홈</h5></a></li>
+                            <li class="item"><a href="#"><h5>채널</h5></a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">채널</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <div class="content-box">
+                            <div class="top">
+                                <div class="flex j-between a-center">
+                                    <ul class="flex grow">
+                                        <li class="item">
+                                            <select class="min-w120">
+                                                <option>등록일</option>
+                                                <option>수정일</option>
+                                            </select>
+                                        </li>
+                                        <li class="item">
+                                            <div class="input-datepicker w-256">
+                                                <input type="text" date-picker placeholder="기간 선택" multiple>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box flex">
+                                        <button class="btn-blue icon w-plus">채널 등록</button>
+                                        <button class="btn-white icon b-down">엑셀 다운로드</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- top end -->
+                            <div class="middle">
+                                <div class="full-table">
+                                    <table>
+                                        <colgroup>
+                                            <col width="68px"><!-- # -->
+                                            <col width="100px"><!-- 채널 코드 -->
+                                            <col width="222px"><!-- 채널 명 -->
+                                            <col width="110px"><!-- 사용 -->
+                                            <col width="110px"><!-- 발급 -->
+                                            <col width="110px"><!-- 판매 -->
+                                            <col width="110px"><!-- 실물 판매 -->
+                                            <col width="200px"><!-- 사업자 -->
+                                            <col width="140px"><!-- 채널 구분 -->
+                                            <col width="100px"><!-- 정산 대상 -->
+                                            <col width="130px"><!-- 등록일 -->
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th><div></div><h6>#</h6></th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>채널 코드
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>채널 명
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사용
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>발급
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>판매
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>실물 판매
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사업자
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>채널 구분
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>정산 대상
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>등록일
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                            </tr>
+                                            <tr class="search">
+                                                <th></th>
+                                                <th>
+                                                    <label for="" class="input-box">
+                                                        <div class="item">
+                                                            <input id="" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label for="" class="input-box">
+                                                        <div class="item">
+                                                            <input id="" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th>
+                                                    <label for="" class="input-box">
+                                                        <div class="item">
+                                                            <input id="" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label for="" class="input-box">
+                                                        <div class="item">
+                                                            <input id="" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <!-- thead end -->
+                                        <tbody>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>CA001100</td>
+                                                <td>올리브영</td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue disabled">발급</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag green">판매</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag orange">실물판매</span>
+                                                </td>
+                                                <td>CJ 올리브네트웍스</td>
+                                                <td>온/오프라인 매장</td>
+                                                <td>본사</td>
+                                                <td>2024-01-10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>CA001101</td>
+                                                <td>스타벅스</td>
+                                                <td>
+                                                    <span class="tag blue disabled">사용</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue disabled">발급</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag green disabled">판매</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag orange">실물판매</span>
+                                                </td>
+                                                <td>CJ 올리브네트웍스</td>
+                                                <td>오프라인 매장</td>
+                                                <td>본사</td>
+                                                <td>2024-01-10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>CA001102</td>
+                                                <td>메가MGC커피</td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue disabled">발급</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag green">판매</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag orange">실물판매</span>
+                                                </td>
+                                                <td>앤하우스</td>
+                                                <td>오프라인 매장</td>
+                                                <td>본사</td>
+                                                <td>2024-01-10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>CA001103</td>
+                                                <td>투썸플레이스 매장</td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue">발급</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag green">판매</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag orange disabled">실물판매</span>
+                                                </td>
+                                                <td>투썸플레이스 주식회사</td>
+                                                <td>온/오프라인 매장</td>
+                                                <td>본사</td>
+                                                <td>2024-01-10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>CA001104</td>
+                                                <td>폴 바셋</td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue disabled">발급</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag green">판매</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag orange disabled">실물판매</span>
+                                                </td>
+                                                <td>CJ 올리브네트웍스</td>
+                                                <td>온/오프라인 매장</td>
+                                                <td>본사</td>
+                                                <td>2024-01-10</td>
+                                            </tr>
+                                        </tbody>
+                                        <!-- tbody end -->
+                                    </table>
+                                    <!-- table end -->
+                                </div>
+                                <!-- full-table end -->
+                                <div class="pagination-box">
+                                    <div class="page-num">
+                                        <div class="item">
+                                            <h5 class="font-gray">Row per page</h5>
+                                            <select class="s-select">
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>30</option>
+                                                <option>50</option>
+                                            </select>
+                                        </div>
+                                        <div class="item">
+                                            <h5>Go to</h5>
+                                            <label for="page" class="input-box">
+                                                <input id="page" type="text" class="s-input" value="1">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="pagination">
+                                        <div class="page-area">
+                                            <button class="paging-btn first" href="#" disabled></button>
+                                            <button class="paging-btn prev" href="#"></button>
+                                            <a class="num" href="#">1</a>
+                                            <a class="num on" href="#">2</a>
+                                            <a class="num" href="#">3</a>
+                                            <a class="num" href="#">4</a>
+                                            <a class="num" href="#">5</a>
+                                            <a class="view" href="#"></a>
+                                            <a class="num" href="#">200</a>
+                                            <button class="paging-btn next" href="#"></button>
+                                            <button class="paging-btn last" href="#"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- pagination-box end -->
+                            </div>
+                            <!-- middle end -->
+                        </div>
+                        <!-- content-box end -->
+                    </div>
+                    <!-- padding-box end -->
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/lib/bpopup/jquery.bpopup.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/selectbox/filter-multi-select-bundle.min.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function () {
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+    <style>
+        #sample-wrap {background-color: #D9D9D9; min-height: 100%;padding: 36px;}
+        .sample-box {background-color: #fff; padding: 36px; width: 800px;}
+        .sample-box +.sample-box {margin-top: 20px;}
+        .sample-box h2 {font-size: 20px; font-weight: 700; line-height: 28px; margin-bottom: 10px;}
+        .sample-box textarea {margin-top: 16px;}
+    </style>
+</head>
+<body>
+
+    <!-- popup -->
+    <!-- 카테고리 등록 -->
+    <!-- 팝업이 보여야할때만 popup에 클래스 on 추가 : 팝업 안보이려면 on 삭제 -->
+    <div class="popup" id="category-register-popup">
+        <div class="dim">
+            <div class="content-box w-660 without-border">
+                <div class="top">
+                    <h4 class="title">카테고리 관리</h4>
+                    <button class="close-btn"></button>
+                </div>
+                <!-- top end -->
+                 <div class="middle p-24">
+                    <div class="grid-box g2">
+                        <label for="category-code" class="input-box">
+                            <h5 class="font-gray">카테고리 코드</h5>
+                            <input type="text" id="category-code" placeholder="자동 생성" disabled>
+                        </label>
+                        <div class="input-box w-472">
+                            <h5 class="font-gray star">카테고리 명</h5>
+                            <div class="input-btn-box">
+                                <input type="text" id="category-name" placeholder="신규 카테고리 명을 입력해주세요.">
+                                <button class="input-btn btn-white">신규 등록</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table>
+                        <colgroup>
+                            <col width="68px"><!-- # -->
+                            <col width="100px"><!-- 카테고리 코드 -->
+                            <col width="294px"><!-- 카테고리명 -->
+                            <col width="100px"><!-- 등록일 -->
+                            <col width="50px"><!-- 수정하기 -->
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><div></div><h6>#</h6></th>
+                                <th><div></div><h6 class="line-fix">카테고리 코드</h6></th>
+                                <th><div></div><h6>카테고리명</h6></th>
+                                <th><div></div><h6>등록일</h6></th>
+                                <th><div></div><h6>수정</h6></th>
+                            </tr>
+                        </thead>
+                        <!-- thead end -->
+                        <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>0003</td>
+                                <td>베이커리</td>
+                                <td>2024-01-01</td>
+                                <td><button class="btn-edit">수정하기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0002</td>
+                                <td>카페</td>
+                                <td>2024-01-01</td>
+                                <td><button class="btn-edit">수정하기</button></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0001</td>
+                                <td>식당</td>
+                                <td>2024-01-01</td>
+                                <td><button class="btn-edit">수정하기</button></td>
+                            </tr>
+                        </tbody>
+                        <!-- tbody end -->
+                        <tfoot>
+                            <tr>
+                                <td colspan="9">
+                                    <div class="pagination-box j-end">
+                                        <div class="pagination">
+                                            <div class="page-area">
+                                                <button class="paging-btn first" href="#" disabled></button>
+                                                <button class="paging-btn prev" href="#"></button>
+                                                <a class="num" href="#">1</a>
+                                                <a class="num on" href="#">2</a>
+                                                <a class="num" href="#">3</a>
+                                                <a class="num" href="#">4</a>
+                                                <a class="num" href="#">5</a>
+                                                <a class="view" href="#"></a>
+                                                <a class="num" href="#">200</a>
+                                                <button class="paging-btn next" href="#"></button>
+                                                <button class="paging-btn last" href="#"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <!-- tfoot end -->
+                    </table>
+                    <!-- table end -->
+                </div>
+                <!-- middle end -->
+                <div class="bottom">
+                    <button class="btn-blue">닫기</button>
+                </div>
+                <!-- bottom end -->
+            </div>
+            <!-- content-box end -->
+        </div>
+    </div>
+
+    <div id="sample-wrap">
+        <div class="sample-box">
+            <h2>모달 가이드</h2>
+            <p>해당 버튼에 클래스 btn-open-modal 추가 , data-target="#컨펌팝업ID" 추가</p>
+            <textarea><button class="btn-open-modal" data-target="#category-register-popup">모달여는 버튼</button></textarea>
+        </div>
+        <div class="sample-box">
+            <h2 class="sample-title">예시 : 브랜드 - 카테고리 관리 - 카테고리 등록 팝업</h2>
+            <button class="btn-white btn-open-modal" data-target="#category-register-popup">모달여는 버튼</button>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# 공통
+* text=auto eol=lf
+
+# imanges
+*.png binary
+*.jpg binary
+
+# fonts
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.otf binary

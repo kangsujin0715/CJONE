@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/bpopup/jquery.bpopup.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/selectbox/filter-multi-select-bundle.min.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function () {
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#">
+                                    <h5>홈</h5>
+                                </a></li>
+                            <li class="item"><a href="#">
+                                    <h5>브랜드</h5>
+                                </a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">브랜드</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <div class="content-box">
+                            <div class="top">
+                                <div class="flex j-between a-center">
+                                    <ul class="flex grow">
+                                        <li class="item">
+                                            <select class="min-w120">
+                                                <option>등록일</option>
+                                                <option>수정일</option>
+                                            </select>
+                                        </li>
+                                        <li class="item">
+                                            <div class="input-datepicker w-256">
+                                                <input type="text" date-picker placeholder="기간 선택">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box flex">
+                                        <button class="btn-blue icon w-plus">브랜드 등록</button>
+                                        <button class="btn-white icon b-down">엑셀 다운로드</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- top end -->
+                            <div class="middle">
+                                <div class="full-table">
+                                    <table>
+                                        <colgroup>
+                                            <col width="68px">
+                                            <col width="82px">
+                                            <col width="220px">
+                                            <col width="220px">
+                                            <col width="220px">
+                                            <col width="100px">
+                                            <col width="100px">
+                                            <col width="136px">
+                                            <col width="136px">
+                                            <col width="120px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr class="img-include">
+                                                <th>
+                                                    <div></div>
+                                                    <h6>#</h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>상품 이미지</h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>브랜드코드<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>브랜드명<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사업자<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>상품<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>발급 정책<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>계약 방식<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사용 여부<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>등록일<div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                            </tr>
+                                            <tr class="search search-deep">
+                                                <th></th>
+                                                <th></th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <!-- thead end -->
+                                        <tbody>
+                                            <tr class="img-include">
+                                                <td>1</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>CJSG</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">221</td>
+                                                <td>
+                                                    <span class="tag blue">단일 계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag lightgray">미사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>2</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>STBS</td>
+                                                <td>투썸플레이스 주식회사</td>
+                                                <td>투썸플레이스 주식회사</td>
+                                                <td class="txtr">221</td>
+                                                <td class="txtr">221</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>3</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>TSPS</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td class="txtr">10</td>
+                                                <td class="txtr">10</td>
+                                                <td>
+                                                    <span class="tag green">장기 계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag lightgray">미사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>4</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>ABCD</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td class="txtr">1</td>
+                                                <td class="txtr">1</td>
+                                                <td>
+                                                    <span class="tag blue">단일 계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>5</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>AB12</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">15</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>6</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>CJA2</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">15</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag blue">사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>7</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>FJW2</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">15</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag lightgray">미사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>8</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>G123</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">15</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag lightgray">미사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>9</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>VI82</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">15</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag lightgray">미사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr class="img-include">
+                                                <td>9999</td>
+                                                <td>
+                                                    <div class="img-box">
+                                                        <img src="/images/sample-brand-table.svg" alt="">
+                                                    </div>
+                                                </td>
+                                                <td>CJA1</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td>CJ올리브네트웍스</td>
+                                                <td class="txtr">15</td>
+                                                <td class="txtr">15</td>
+                                                <td>
+                                                    <span class="tag lightgray">미계약</span>
+                                                </td>
+                                                <td>
+                                                    <span class="tag lightgray">미사용</span>
+                                                </td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                        </tbody>
+                                        <!-- tbody end -->
+                                    </table>
+                                    <!-- table end -->
+                                </div>
+                                <!-- full-table end -->
+                                <div class="pagination-box">
+                                    <div class="page-num">
+                                        <div class="item">
+                                            <h5 class="font-gray">Row per page</h5>
+                                            <select class="s-select">
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>30</option>
+                                                <option>50</option>
+                                            </select>
+                                        </div>
+                                        <div class="item">
+                                            <h5>Go to</h5>
+                                            <label for="page" class="input-box">
+                                                <input id="page" type="text" class="s-input" value="1">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="pagination">
+                                        <div class="page-area">
+                                            <button class="paging-btn first" href="#" disabled></button>
+                                            <button class="paging-btn prev" href="#"></button>
+                                            <a class="num" href="#">1</a>
+                                            <a class="num on" href="#">2</a>
+                                            <a class="num" href="#">3</a>
+                                            <a class="num" href="#">4</a>
+                                            <a class="num" href="#">5</a>
+                                            <a class="view" href="#"></a>
+                                            <a class="num" href="#">200</a>
+                                            <button class="paging-btn next" href="#"></button>
+                                            <button class="paging-btn last" href="#"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- pagination-box end -->
+                            </div>
+                            <!-- middle end -->
+                        </div>
+                        <!-- content-box end -->
+                    </div>
+                    <!-- padding-box end -->
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+
+    <!-- sample script for ui/ux - will need to be remove after -->
+    <script>
+        $(document).ready(() => {
+            $('.btn-upload').on('click', ((e) => {
+                $(e.currentTarget).toggleClass('uploaded')
+            }))
+
+            $('.padding-box .bottom .btn-white').on('click', (() => {
+                $('#register-cancle-popup').addClass('on');
+            }))
+
+            $('.padding-box .bottom .btn-blue').on('click', (() => {
+                $('#register-complete-popup').addClass('on');
+            }))
+
+            // $('#category-register-popup .btn-blue')
+
+            $('.popup button').on('click', ((e) => {
+                $(e.currentTarget).closest('.popup').removeClass('on')
+            }))
+        })
+    </script>
+    <script src="/js/common.js"></script>
+</body>
+
+</html>

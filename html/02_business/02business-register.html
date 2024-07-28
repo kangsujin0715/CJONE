@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업자 등록</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-ui.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/moment/moment-with-locales.min.js"></script>
+    <script src="/lib/rangepicker/daterangepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function () {
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#">
+                                    <h5>홈</h5>
+                                </a></li>
+                            <li class="item"><a href="#">
+                                    <h5>사업자</h5>
+                                </a></li>
+                            <li class="item"><a href="#">
+                                    <h5>사업자 등록</h5>
+                                </a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">사업자 등록</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <ul class="grid-box wr480">
+                            <li class="item">
+                                <div class="content-box">
+                                    <div class="top">
+                                        <h4>세일즈 사업자 선택</h4>
+                                    </div>
+                                    <!-- top end -->
+                                    <div class="middle">
+                                        <div class="top-box">
+                                            <label for="user_id" class="input-box w-286">
+                                                <div class="item">
+                                                    <input id="user_id" type="search" class="error"
+                                                        placeholder="사업자 번호 또는 사업자명을 입력하세요">
+                                                    <button class="search"></button>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <table>
+                                                <colgroup>
+                                                    <col width="68px"><!-- # -->
+                                                    <col width="140px"><!-- 사업자 번호 -->
+                                                    <col width="412px"><!-- 사업자명 -->
+                                                    <col width="120px"><!-- 업태 -->
+                                                    <col width="120px"><!-- 대표자명 -->
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div></div>
+                                                            <h6>#</h6>
+                                                        </th>
+                                                        <th>
+                                                            <div></div>
+                                                            <h6>사업자 번호
+                                                                <div class="btn-filter-wrap">
+                                                                    <button class="btn-filter-up"></button>
+                                                                    <button class="btn-filter-down"></button>
+                                                                </div>
+                                                            </h6>
+                                                        </th>
+                                                        <th>
+                                                            <div></div>
+                                                            <h6>사업자명
+                                                                <div class="btn-filter-wrap">
+                                                                    <button class="btn-filter-up"></button>
+                                                                    <button class="btn-filter-down"></button>
+                                                                </div>
+                                                            </h6>
+                                                        </th>
+                                                        <th>
+                                                            <div></div>
+                                                            <h6>업태
+                                                                <div class="btn-filter-wrap">
+                                                                    <button class="btn-filter-up"></button>
+                                                                    <button class="btn-filter-down"></button>
+                                                                </div>
+                                                            </h6>
+                                                        </th>
+                                                        <th>
+                                                            <div></div>
+                                                            <h6>대표자명
+                                                                <div class="btn-filter-wrap">
+                                                                    <button class="btn-filter-up"></button>
+                                                                    <button class="btn-filter-down"></button>
+                                                                </div>
+                                                            </h6>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <!-- thead end -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="5" class="not">조회된 사업자가 없습니다.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1234123413131</td>
+                                                        <td>씨제일 푸드빌(주)</td>
+                                                        <td>IT 사업</td>
+                                                        <td>홍길동</td>
+                                                    </tr>
+                                                </tbody>
+                                                <!-- tbody end -->
+                                            </table>
+                                            <!-- table end -->
+                                        </div>
+                                        <!-- full-table end -->
+                                        <div class="pagination-box">
+                                            <div class="pagination">
+                                                <div class="page-area">
+                                                    <button class="paging-btn first" href="#" disabled></button>
+                                                    <button class="paging-btn prev" href="#"></button>
+                                                    <a class="num" href="#">1</a>
+                                                    <a class="num on" href="#">2</a>
+                                                    <a class="num" href="#">3</a>
+                                                    <a class="num" href="#">4</a>
+                                                    <a class="num" href="#">5</a>
+                                                    <a class="view" href="#"></a>
+                                                    <a class="num" href="#">200</a>
+                                                    <button class="paging-btn next" href="#"></button>
+                                                    <button class="paging-btn last" href="#"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- pagination-box end -->
+                                    </div>
+                                    <!-- middle end -->
+                                </div>
+                                <!-- content-box end -->
+                            </li>
+                            <li class="item">
+                                <div class="content-box">
+                                    <div class="top">
+                                        <h4>등록 사업자 정보</h4>
+                                    </div>
+                                    <!-- top end -->
+                                    <div class="middle">
+                                        <ul class="line-box without-border">
+                                            <li class="item">
+                                                <h5 class="title">선택 사업자</h5>
+                                                <p class="fs-14">CJ 올리브네트웍스</p>
+                                            </li>
+                                            <li class="item">
+                                                <ul class="grid-box g2 mb-10">
+                                                    <li>
+                                                        <h5 class="title">공문 사업자 이미지</h5>
+                                                        <div class="img-upload">
+                                                            <img src="/images/cj.svg" alt="">
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <h5 class="title">공문 직인 이미지</h5>
+                                                        <div class="img-upload sm">
+                                                            <img src="/images/stamp.svg" alt="">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <p class="fs-12 font-red">추후 인보이스 발행 문서 제작하려면 사업자 이미지, 직인 이미지를 업로드 해야
+                                                    합니다.</p>
+                                            </li>
+                                            <li class="item">
+                                                <h5 class="title star">사업자 구분</h5>
+                                                <ul class="radio-box flex">
+                                                    <li class="item">
+                                                        <input type="radio" id="radio5-1" name="radio" checked>
+                                                        <label for="radio5-1">
+                                                            <span></span>
+                                                            <h5>브랜드/채널</h5>
+                                                        </label>
+                                                    </li>
+                                                    <li class="item">
+                                                        <input type="radio" id="radio5-2" name="radio">
+                                                        <label for="radio5-2">
+                                                            <span></span>
+                                                            <h5>가맹점 사업자</h5>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="item">
+                                                <label for="user_id" class="input-box">
+                                                    <h5 class="font-gray">대표 사업자 지정</h5>
+                                                    <input id="user_id" type="text" placeholder="" disabled>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- middle end -->
+                                </div>
+                                <!-- content-box end -->
+                            </li>
+                        </ul>
+                        <!-- grid-box end -->
+                        <div class="bottom">
+                            <button class="btn-white">취소</button>
+                            <button class="btn-blue">정보수정</button>
+                        </div>
+                        <!-- bottom end -->
+                    </div>
+                    <!-- padding-box end -->
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+</body>
+
+</html>

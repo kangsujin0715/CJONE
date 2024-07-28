@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Main Table Layout</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- css -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/selectbox/jquery.nice-select.js"></script>
+    <script src="/lib/moment/moment-with-locales.min.js"></script>
+    <script src="/lib/rangepicker/daterangepicker.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- js -->
+    <script>
+        $(document).ready(function(){
+            $("#side").load("/html/00_include/include-side-menu.html");
+            $("#header").load("/html/00_include/include-header.html");
+        });
+        // include
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="side"></div>
+        <!-- side-menu include -->
+        <main>
+            <div id="header"></div>
+            <!-- header include -->
+            <section>
+                <div class="section-box">
+                    <div class="main-top-box">
+                        <ul class="page-nav-box">
+                            <li class="item"><a href="#"><h5>사업자</h5></a></li>
+                        </ul>
+                        <!-- page-nav-box end -->
+                        <h2 class="title">사업자</h2>
+                    </div>
+                    <!-- main-top-box end -->
+                    <div class="padding-box">
+                        <div class="content-box">
+                            <div class="top">
+                                <div class="flex j-between a-center">
+                                    <ul class="flex grow">
+                                        <li class="item">
+                                            <select class="min-w120">
+                                                <option>등록일</option>
+                                                <option>수정일</option>
+                                            </select>
+                                        </li>
+                                        <li class="item">
+                                            <label for="">
+                                                <input class="date" id="date" placeholder="일자" type="text">
+                                            </label>
+                                            <!-- date ui 임시사용 -->
+                                        </li>
+                                    </ul>
+                                    <div class="btn-box flex">
+                                        <button class="btn-blue icon w-plus">사업자 등록</button>
+                                        <button class="btn-white icon b-down">엑셀 다운로드</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- top end -->
+                            <div class="middle">
+                                <div class="full-table">
+                                    <table>
+                                        <colgroup>
+                                            <col width="30px"><!-- # -->
+                                            <col width="140px"><!-- 사업자 번호 -->
+                                            <col width="214px"><!-- 사업자명 -->
+                                            <col width="120px"><!-- 업태 -->
+                                            <col width="120px"><!-- 대표자명 -->
+                                            <col width="120px"><!-- 사업자 구분 -->
+                                            <col width="214px"><!-- 대표 사업자 -->
+                                            <col width="120px"><!-- 등록일 -->
+                                            <col width="120px"><!-- 수정일 -->
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>#</h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사업자 번호
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사업자명
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>업태
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>대표자명
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>사업자 구분
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>대표 사업자
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>등록일
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                                <th>
+                                                    <div></div>
+                                                    <h6>수정일
+                                                        <div class="btn-filter-wrap">
+                                                            <button class="btn-filter-up"></button>
+                                                            <button class="btn-filter-down"></button>
+                                                        </div>
+                                                    </h6>
+                                                </th>
+                                            </tr>
+                                            <tr class="search">
+                                                <th></th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                            <button class="search"></button>
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                            <button class="search"></button>
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                            <button class="search"></button>
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <select>
+                                                        <option>전체</option>
+                                                        <option>샘플</option>
+                                                        <option>샘플</option>
+                                                    </select>
+                                                </th>
+                                                <th>
+                                                    <label for="user_id" class="input-box">
+                                                        <div class="item">
+                                                            <input id="user_id" type="search" placeholder="검색">
+                                                            <button class="search"></button>
+                                                        </div>
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <!-- thead end -->
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1234123413131</td>
+                                                <td>씨제일 푸드빌(주)</td>
+                                                <td>IT 사업</td>
+                                                <td>홍길동</td>
+                                                <td>브랜드/채널</td>
+                                                <td>씨제이 푸드빌(주)</td>
+                                                <td>2024-01-01</td>
+                                                <td>2024-01-01</td>
+                                            </tr>
+                                        </tbody>
+                                        <!-- tbody end -->
+                                    </table>
+                                    <!-- table end -->
+                                </div>
+                                <!-- full-table end -->
+                                <div class="pagination-box">
+                                    <div class="page-num">
+                                        <div class="item">
+                                            <h5 class="font-gray">Row per page</h5>
+                                            <select class="s-select">
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>30</option>
+                                                <option>50</option>
+                                            </select>
+                                        </div>
+                                        <div class="item">
+                                            <h5>Go to</h5>
+                                            <label for="page" class="input-box">
+                                                <input id="page" type="text" class="s-input" value="1">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="pagination">
+                                        <div class="page-area">
+                                            <button class="paging-btn first" href="#" disabled></button>
+                                            <button class="paging-btn prev" href="#"></button>
+                                            <a class="num" href="#">1</a>
+                                            <a class="num on" href="#">2</a>
+                                            <a class="num" href="#">3</a>
+                                            <a class="num" href="#">4</a>
+                                            <a class="num" href="#">5</a>
+                                            <a class="view" href="#"></a>
+                                            <a class="num" href="#">200</a>
+                                            <button class="paging-btn next" href="#"></button>
+                                            <button class="paging-btn last" href="#"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- pagination-box end -->
+                            </div>
+                            <!-- middle end -->
+                        </div>
+                        <!-- content-box end -->
+                    </div>
+                    <!-- padding-box end -->
+                </div>
+                <!-- section-box end -->
+            </section>
+            <!-- section end -->
+        </main>
+        <!-- main end -->
+    </div>
+    <script>
+        $('#date').daterangepicker({
+			opens: 'right',
+			showDropdowns: true, // 년월 수동 설정 여부
+			locale: {
+				"separator": " - ",				 // 시작일시와 종료일시 구분자
+				"format": "YY-MM-DD", // 일시 노출 포맷
+				"applyLabel": "확인",	// 확인 버튼 텍스트
+				"daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+				"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+			},
+		},
+		function (start, end, label) {
+			console.log("A new date selection was made: " + start.format('YY-MM-DD') + ' to ' + end.format('YY-MM-DD'));
+		});
+
+    </script>
+</body>
+</html>
